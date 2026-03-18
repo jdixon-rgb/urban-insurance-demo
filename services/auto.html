@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Insurance | Urban Insurance Agency - Starting at $35/month</title>
+  <meta name="description" content="Auto insurance starting at $35/month in Chicago. Poor credit or no credit is never a problem. 20+ carriers, free quote in under 4 minutes. Illinois and Indiana coverage.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #132B52;
+      --blue: #1B6CE0;
+      --blue-light: #3B8AFF;
+      --blue-glow: rgba(27, 108, 224, 0.15);
+      --sky: #E8F1FD;
+      --red: #DC2828;
+      --red-dark: #B91C1C;
+      --gold: #F59E0B;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'DM Sans', 'Inter', sans-serif;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 50px -12px rgba(0,0,0,0.15);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--gray-800);
+      line-height: 1.6;
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; font-family: inherit; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* No orphans */
+    h1, h2, h3, h4, h5, h6, p, li, a, span, blockquote, td, th, label, caption, figcaption {
+      text-wrap: pretty;
+    }
+    p:last-child, li:last-child {
+      text-wrap: balance;
+    }
+
+    /* ========== TOP BAR ========== */
+    .topbar {
+      background: var(--navy);
+      color: var(--white);
+      font-size: 13px;
+      padding: 8px 0;
+    }
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .topbar a {
+      color: var(--gray-300);
+      transition: color 0.2s;
+    }
+    .topbar a:hover { color: var(--white); }
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .topbar-left svg { flex-shrink: 0; }
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .topbar-hours {
+      color: var(--gray-400);
+      font-size: 12px;
+    }
+
+    /* ========== HEADER ========== */
+    .header {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: box-shadow 0.3s;
+    }
+    .header.scrolled {
+      box-shadow: var(--shadow-lg);
+    }
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .logo-text {
+      line-height: 1.15;
+    }
+    .logo-text strong {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--navy);
+      display: block;
+      letter-spacing: -0.3px;
+    }
+    .logo-text span {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-600);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s;
+    }
+    .nav a:hover {
+      color: var(--navy);
+      background: var(--gray-50);
+    }
+    .nav a.active {
+      color: var(--navy);
+      background: var(--blue-glow);
+    }
+    .nav-cta {
+      background: var(--blue) !important;
+      color: var(--white) !important;
+      font-weight: 600 !important;
+      padding: 10px 20px !important;
+      margin-left: 8px;
+    }
+    .nav-cta:hover {
+      background: var(--blue-light) !important;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      padding: 8px;
+    }
+
+    /* ========== SERVICE HERO ========== */
+    .service-hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, #1a3a6b 100%);
+      overflow: hidden;
+      padding: 72px 0 80px;
+    }
+    .service-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 80%;
+      height: 200%;
+      background: radial-gradient(ellipse at center, rgba(27, 108, 224, 0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .service-hero .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+    }
+    .service-hero .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--blue-light);
+      margin-bottom: 24px;
+      backdrop-filter: blur(8px);
+    }
+    .service-hero h1 {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+    }
+    .service-hero h1 .highlight {
+      color: var(--blue-light);
+    }
+    .service-hero .hero-sub {
+      font-size: 18px;
+      color: rgba(255,255,255,0.7);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ========== BUTTONS ========== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      transition: all 0.25s;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(27, 108, 224, 0.35);
+    }
+    .btn-primary:hover {
+      background: var(--blue-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(27, 108, 224, 0.4);
+    }
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--blue);
+      border: 1.5px solid var(--blue);
+    }
+    .btn-outline-dark:hover {
+      background: var(--blue-glow);
+    }
+    .btn-red {
+      background: var(--red);
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(220, 40, 40, 0.3);
+    }
+    .btn-red:hover {
+      background: var(--red-dark);
+      transform: translateY(-1px);
+    }
+    .btn-white {
+      background: var(--white);
+      color: var(--blue);
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+    .btn-white:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    /* ========== SECTION STYLES ========== */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.8px;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    .section-desc {
+      font-size: 17px;
+      color: var(--gray-500);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ========== SERVICE OVERVIEW ========== */
+    .service-overview {
+      padding: 80px 0;
+    }
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .overview-content .section-title {
+      font-size: 34px;
+    }
+    .overview-content p {
+      font-size: 16px;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .overview-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .stat-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: center;
+    }
+    .stat-card .stat-number {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--blue);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-card .stat-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-500);
+    }
+
+    /* ========== BENEFITS ========== */
+    .benefits {
+      padding: 80px 0;
+      background: var(--gray-50);
+    }
+    .benefits-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .benefits-header .section-desc {
+      margin: 0 auto;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .benefit-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      transition: all 0.3s;
+    }
+    .benefit-card:hover {
+      border-color: var(--blue);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: #EFF6FF;
+      color: #2563EB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .benefit-card h4 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .benefit-card p {
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    /* ========== WHO NEEDS ========== */
+    .who-needs {
+      padding: 80px 0;
+    }
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .who-content .section-title {
+      font-size: 34px;
+    }
+    .who-list {
+      list-style: none;
+      margin-top: 24px;
+    }
+    .who-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: 15px;
+      color: var(--gray-700);
+    }
+    .who-list li:last-child {
+      border-bottom: none;
+    }
+    .who-list li svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--blue);
+    }
+    .who-visual {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+    }
+    .who-visual .big-price {
+      font-family: var(--font-display);
+      font-size: 72px;
+      font-weight: 900;
+      color: var(--blue-light);
+      line-height: 1;
+    }
+    .who-visual .price-label {
+      font-size: 18px;
+      color: rgba(255,255,255,0.7);
+      margin-top: 8px;
+    }
+    .who-visual .price-note {
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 16px;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta-band {
+      padding: 72px 0;
+      background: linear-gradient(135deg, var(--blue) 0%, #1457C0 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .cta-band .container { position: relative; z-index: 2; }
+    .cta-band h2 {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    .cta-band p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+    }
+    .cta-phone {
+      margin-top: 20px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+    }
+    .cta-phone a {
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ========== RELATED SERVICES ========== */
+    .related {
+      padding: 80px 0;
+      background: var(--gray-50);
+    }
+    .related-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .related-header .section-desc { margin: 0 auto; }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .related-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      transition: all 0.3s;
+      display: block;
+    }
+    .related-card:hover {
+      border-color: var(--blue);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+    .related-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .related-icon.sr22 { background: #FEF3C7; color: #D97706; }
+    .related-icon.commercial { background: #F5F3FF; color: #7C3AED; }
+    .related-icon.home { background: #F0FDF4; color: #16A34A; }
+    .related-card h4 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .related-card p {
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+    .related-card .link-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--blue);
+      margin-top: 12px;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--gray-900);
+      color: var(--gray-400);
+      padding: 64px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-brand .logo-text strong { color: var(--white); }
+    .footer-brand .logo-text span { color: var(--gray-500); }
+    .footer-brand > p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-top: 16px;
+      max-width: 300px;
+    }
+    .footer-brand .footer-address {
+      margin-top: 20px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    .footer-col h5 {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li {
+      margin-bottom: 10px;
+    }
+    .footer-col a {
+      font-size: 14px;
+      color: var(--gray-500);
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--gray-600);
+    }
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+    }
+    .footer-socials a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-500);
+      transition: all 0.2s;
+    }
+    .footer-socials a:hover {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    /* ========== MOBILE ========== */
+    @media (max-width: 1024px) {
+      .service-hero h1 { font-size: 40px; }
+      .overview-grid { grid-template-columns: 1fr; gap: 40px; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .who-grid { grid-template-columns: 1fr; gap: 40px; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .topbar { display: none; }
+      .nav { display: none; }
+      .mobile-toggle { display: flex; }
+      .service-hero h1 { font-size: 32px; letter-spacing: -1px; }
+      .service-hero .hero-sub { font-size: 16px; }
+      .section-title { font-size: 28px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .overview-stats { grid-template-columns: 1fr 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .cta-band h2 { font-size: 28px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    }
+
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+    .fade-up.delay-1 { animation-delay: 0.1s; }
+    .fade-up.delay-2 { animation-delay: 0.2s; }
+    .fade-up.delay-3 { animation-delay: 0.3s; }
+    .fade-up.delay-4 { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <a href="tel:3126648088" style="display:flex;align-items:center;gap:6px;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (312) 664-8088
+        </a>
+        <a href="mailto:info@urbaninsuranceagency.com" style="display:flex;align-items:center;gap:6px;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@urbaninsuranceagency.com
+        </a>
+      </div>
+      <div class="topbar-right">
+        <span class="topbar-hours">Mon - Sat: 8:00 AM - 6:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M3 21V8l9-6 9 6v13H3z" fill="#3B8AFF" opacity="0.3"/>
+            <path d="M7 21V12h4v9M13 21V14h4v7" fill="white"/>
+            <rect x="9" y="9" width="6" height="1" rx="0.5" fill="white" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <strong>Urban Insurance</strong>
+          <span>Agency</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/services/auto.html" class="active">Auto</a>
+        <a href="/services/sr22.html">SR-22</a>
+        <a href="/services/commercial.html">Commercial</a>
+        <a href="/services/homeowners.html">Homeowners</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/#quote" class="nav-cta btn">Get a Quote</a>
+      </nav>
+
+      <button class="mobile-toggle" aria-label="Menu">
+        <svg width="24" height="24" fill="none" stroke="var(--navy)" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- SERVICE HERO -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="hero-badge fade-up">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Starting at $35/month
+      </div>
+      <h1 class="fade-up delay-1">Auto Insurance That <span class="highlight">Fits Your Budget</span></h1>
+      <p class="hero-sub fade-up delay-2">We shop 20+ carriers to find you the lowest auto insurance rates in Illinois and Indiana. Poor credit or no credit is never a problem.</p>
+    </div>
+  </section>
+
+  <!-- SERVICE OVERVIEW -->
+  <section class="service-overview">
+    <div class="container">
+      <div class="overview-grid">
+        <div class="overview-content">
+          <div class="section-label">Coverage You Can Count On</div>
+          <h2 class="section-title">Affordable Auto Insurance for Every Driver</h2>
+          <p>At Urban Insurance Agency, we believe everyone deserves quality auto coverage at a price they can afford. Whether you have perfect credit or no credit history at all, our team of licensed agents will work with over 20 insurance carriers to find you the best possible rate.</p>
+          <p>We serve drivers across Illinois and Indiana with comprehensive, collision, and liability coverage. Get a free quote in under 4 minutes with no credit check required. Our low monthly payment options make it easy to stay insured and on the road.</p>
+        </div>
+        <div class="overview-stats">
+          <div class="stat-card">
+            <div class="stat-number">$35</div>
+            <div class="stat-label">Starting Monthly Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Insurance Carriers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4 min</div>
+            <div class="stat-label">Free Quote Time</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">60+</div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY BENEFITS -->
+  <section class="benefits">
+    <div class="container">
+      <div class="benefits-header">
+        <div class="section-label">Why Choose Us</div>
+        <h2 class="section-title">Benefits of Insuring With Urban</h2>
+        <p class="section-desc">We go beyond just selling policies. We find the right coverage at the right price for your unique situation.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card fade-up">
+          <div class="benefit-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h4>Low Monthly Payments</h4>
+          <p>Pay-as-you-drive options with flexible monthly plans starting at just $35. No large upfront payments required.</p>
+        </div>
+        <div class="benefit-card fade-up delay-1">
+          <div class="benefit-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h4>No Credit Check Needed</h4>
+          <p>Poor credit, bad credit, or no credit history at all is never a barrier. We find you coverage regardless.</p>
+        </div>
+        <div class="benefit-card fade-up delay-2">
+          <div class="benefit-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h4>Good Student Rates</h4>
+          <p>Students maintaining good grades can save even more. We also offer alarm, renewal, and transfer discounts.</p>
+        </div>
+        <div class="benefit-card fade-up delay-3">
+          <div class="benefit-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>Preferred Driver Rates</h4>
+          <p>Low-risk drivers enjoy our preferred rates with top-tier carriers. Clean driving record? You will save big.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO NEEDS THIS -->
+  <section class="who-needs">
+    <div class="container">
+      <div class="who-grid">
+        <div class="who-content">
+          <div class="section-label">Is This For You?</div>
+          <h2 class="section-title">Who Needs Auto Insurance?</h2>
+          <ul class="who-list">
+            <li>
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Drivers looking for lower rates without sacrificing coverage
+            </li>
+            <li>
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Anyone with poor, bad, or no credit history
+            </li>
+            <li>
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Students and young drivers seeking affordable coverage
+            </li>
+            <li>
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Families insuring multiple vehicles in Illinois or Indiana
+            </li>
+            <li>
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Low-risk drivers who want preferred carrier rates
+            </li>
+            <li>
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Anyone looking to switch and save on their current premium
+            </li>
+          </ul>
+        </div>
+        <div class="who-visual">
+          <div class="big-price">$35</div>
+          <div class="price-label">per month starting rate</div>
+          <div class="price-note">No credit check. Quote in under 4 minutes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Ready to Save on Auto Insurance?</h2>
+      <p>Get a free, no-obligation quote in under 4 minutes. No credit check required.</p>
+      <a href="/#quote" class="btn btn-white">
+        Get Your Free Quote Now
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <div class="cta-phone">
+        Or call us directly: <a href="tel:3126648088">(312) 664-8088</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED SERVICES -->
+  <section class="related">
+    <div class="container">
+      <div class="related-header">
+        <div class="section-label">Explore More</div>
+        <h2 class="section-title">Related Services</h2>
+        <p class="section-desc">We offer a full range of insurance products to protect what matters most to you.</p>
+      </div>
+
+      <div class="related-grid">
+        <a href="/services/sr22.html" class="related-card">
+          <div class="related-icon sr22">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h4>SR-22 Filing</h4>
+          <p>Same-day electronic filing to the state. Lowest rates in Chicago.</p>
+          <span class="link-text">
+            Learn More
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a href="/services/commercial.html" class="related-card">
+          <div class="related-icon commercial">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h4>Commercial &amp; Trucking</h4>
+          <p>Long haul, short haul, tow trucks, rideshare, and fleet coverage.</p>
+          <span class="link-text">
+            Learn More
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a href="/services/homeowners.html" class="related-card">
+          <div class="related-icon home">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h4>Homeowners Insurance</h4>
+          <p>Comprehensive home coverage. Bundle with auto for additional savings.</p>
+          <span class="link-text">
+            Learn More
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M3 21V8l9-6 9 6v13H3z" fill="#3B8AFF" opacity="0.3"/>
+                <path d="M7 21V12h4v9M13 21V14h4v7" fill="white"/>
+                <rect x="9" y="9" width="6" height="1" rx="0.5" fill="white" opacity="0.7"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <strong>Urban Insurance</strong>
+              <span>Agency</span>
+            </div>
+          </div>
+          <p>A family-owned independent insurance agency serving Chicago and the surrounding area since 1961.</p>
+          <div class="footer-address">
+            915 W Huron St, Suite C105<br>
+            Chicago, IL 60642<br><br>
+            <a href="tel:3126648088" style="color:var(--blue-light)">(312) 664-8088</a><br>
+            <a href="mailto:info@urbaninsuranceagency.com" style="color:var(--gray-400)">info@urbaninsuranceagency.com</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Insurance</h5>
+          <ul>
+            <li><a href="/services/auto.html">Auto Insurance</a></li>
+            <li><a href="/services/homeowners.html">Homeowners</a></li>
+            <li><a href="/services/sr22.html">SR-22 Filings</a></li>
+            <li><a href="/services/commercial.html">Commercial</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Commercial</h5>
+          <ul>
+            <li><a href="/services/commercial.html">Trucking Insurance</a></li>
+            <li><a href="/services/commercial.html">Tow Truck Insurance</a></li>
+            <li><a href="/services/commercial.html">Rideshare (Uber/Lyft)</a></li>
+            <li><a href="/services/commercial.html">Medical Transport</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+            <li><a href="/#quote">Get a Quote</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Urban Insurance Agency, LLC. All rights reserved.</span>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="var(--gray-900)"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+
+</body>
+</html>
