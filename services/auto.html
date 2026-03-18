@@ -170,6 +170,91 @@
       background: var(--blue-light) !important;
     }
 
+    /* Services dropdown */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown > a {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav-dropdown > a .chevron {
+      transition: transform 0.2s;
+      margin-top: 1px;
+    }
+    .nav-dropdown:hover > a .chevron {
+      transform: rotate(180deg);
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 240px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      padding: 8px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+      transform: translateX(-50%) translateY(4px);
+      z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .dropdown-menu a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px !important;
+      border-radius: var(--radius-sm);
+      font-size: 13px !important;
+      color: var(--gray-700) !important;
+      transition: all 0.15s;
+    }
+    .dropdown-menu a:hover {
+      background: var(--gray-50) !important;
+      color: var(--navy) !important;
+    }
+    .dropdown-menu a .drop-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 15px;
+    }
+    .dropdown-menu a .drop-label strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .dropdown-menu a .drop-label span {
+      font-size: 11px;
+      color: var(--gray-400);
+    }
+    .dropdown-menu a.disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    .dropdown-menu a.disabled .drop-label strong {
+      color: var(--gray-400);
+    }
+    .dropdown-divider {
+      height: 1px;
+      background: var(--gray-100);
+      margin: 6px 0;
+    }
+
     .mobile-toggle {
       display: none;
       background: none;
@@ -719,11 +804,60 @@
       </a>
 
       <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/services/auto.html" class="active">Auto</a>
-        <a href="/services/sr22.html">SR-22</a>
-        <a href="/services/commercial.html">Commercial</a>
-        <a href="/services/homeowners.html">Homeowners</a>
+        <div class="nav-dropdown">
+          <a href="#">Services <svg class="chevron" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+          <div class="dropdown-menu">
+            <a href="/services/auto.html">
+              <div class="drop-icon" style="background:#EFF6FF;color:#2563EB;">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M7 17a2 2 0 100-4 2 2 0 000 4zM17 17a2 2 0 100-4 2 2 0 000 4z"/><path d="M5 17H3v-6l2-5h9l4 5h3v6h-2"/></svg>
+              </div>
+              <div class="drop-label"><strong>Auto Insurance</strong><span>From $35/month</span></div>
+            </a>
+            <a href="/services/sr22.html">
+              <div class="drop-icon" style="background:#FEF3C7;color:#D97706;">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <div class="drop-label"><strong>SR-22 Filings</strong><span>Same-day electronic filing</span></div>
+            </a>
+            <a href="/services/commercial.html">
+              <div class="drop-icon" style="background:#F5F3FF;color:#7C3AED;">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/></svg>
+              </div>
+              <div class="drop-label"><strong>Commercial / Trucking</strong><span>Fleet, tow, rideshare, NEMT</span></div>
+            </a>
+            <a href="/services/homeowners.html">
+              <div class="drop-icon" style="background:#F0FDF4;color:#16A34A;">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
+              </div>
+              <div class="drop-label"><strong>Homeowners</strong><span>Home and renters coverage</span></div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="disabled">
+              <div class="drop-icon" style="background:#FDF2F8;color:#DB2777;">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M12 17V5l4 6h5"/></svg>
+              </div>
+              <div class="drop-label"><strong>Motorcycle</strong><span>Coming soon</span></div>
+            </a>
+            <a href="#" class="disabled">
+              <div class="drop-icon" style="background:#ECFDF5;color:#059669;">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+              </div>
+              <div class="drop-label"><strong>Life Insurance</strong><span>Coming soon</span></div>
+            </a>
+            <a href="#" class="disabled">
+              <div class="drop-icon" style="background:#FFF7ED;color:#EA580C;">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><path d="M3 7v10a2 2 0 002 2h6V5H5a2 2 0 00-2 2z"/></svg>
+              </div>
+              <div class="drop-label"><strong>Renters</strong><span>Coming soon</span></div>
+            </a>
+            <a href="#" class="disabled">
+              <div class="drop-icon" style="background:#F1F5F9;color:#475569;">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="drop-label"><strong>Pet Insurance</strong><span>Coming soon</span></div>
+            </a>
+          </div>
+        </div>
         <a href="/about.html">About</a>
         <a href="/contact.html">Contact</a>
         <a href="/#quote" class="nav-cta btn">Get a Quote</a>
