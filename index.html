@@ -780,8 +780,16 @@
       padding-bottom: 48px;
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .footer-brand .logo-text strong { color: var(--white); }
-    .footer-brand .logo-text span { color: var(--gray-500); }
+    .footer-credit {
+      margin-top: 4px;
+    }
+    .footer-credit a {
+      color: var(--gray-500);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+    }
+    .footer-credit a:hover { color: var(--white); }
     .footer-brand > p {
       font-size: 14px;
       color: var(--gray-500);
@@ -1309,7 +1317,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="logo">
-            <img src="/logo.png" alt="Urban Insurance Agency">
+            <img src="/logo-light.png" alt="Urban Insurance Agency">
           </div>
           <p data-en="A family-owned independent insurance agency serving Chicago and the surrounding area since 1961." data-es="Una agencia de seguros independiente de propiedad familiar que sirve a Chicago y sus alrededores desde 1961.">A family-owned independent insurance agency serving Chicago and the surrounding area since 1961.</p>
           <div class="footer-address">
@@ -1358,7 +1366,10 @@
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2026 Urban Insurance Agency, LLC. All rights reserved.</span>
+        <div>
+          <span>&copy; 2026 Urban Insurance Agency, LLC. All rights reserved.</span>
+          <div class="footer-credit">Built by <a href="https://aidantaylor.com" target="_blank" rel="noopener">Aidan Taylor Marketing</a></div>
+        </div>
         <div class="footer-socials">
           <a href="https://www.facebook.com/UrbanInsurance" target="_blank" rel="noopener" aria-label="Facebook">
             <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
